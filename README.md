@@ -32,9 +32,9 @@ the model. Each column contains the scores associated with:
 
 For example, the model for the consensus:
 
-$A,C,A|G,N_x|T,A,T,A$
+A,C,A|G,N<sub>x</sub>,T,A,T,A
 
-(where $A|G$ indicates that an A or G are allowed, and $N_x$ indicates a
+(where A|G indicates that an A or G are allowed, and N<sub>x</sub> indicates a
 sequence of any length separating the two motifs) could be defined by the
 following table:
 
