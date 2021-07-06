@@ -49,7 +49,11 @@ following table:
 
 
 Where *I* and *D* represent the cost of inserting or deleting a residue from
-the scanned sequence.
+the scanned sequence. Note that the order of the rows is fixed and comes from
+a bitwise operation (`c & 6 >> 1` where c is the residue) on the allowed
+characters (A,C,T,U,G) that maps these to values between 0 and 3 (A -> 0, C ->
+1, T/U -> 2, G -> 3). This works for both upper and lower case, but gives
+non-sensical results for characters outside of this set.
 
 The sequence can then be scanned against a model by a simple dynamic
 programming algorithm as in Needlemen-Wunsch or Smith-Waterman. As I
@@ -59,7 +63,7 @@ likelihoods.
 
 Given the similarity to an HMM, it would probably be better to simply use
 existing HMM software (eg. hmmer), or at least to properly implement an HMM
-scanning algortithm. The reasons for me to write these functions are
+scanning algorithm. The reasons for me to write these functions are
 primarily:
 
 1. As a logical exercise
